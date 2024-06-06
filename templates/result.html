@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissor App</title>
+    <!-- Tailwind CSS CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* Add a gradient background */
+      body {
+        background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+    </style>
+  </head>
+
+  <body class="flex items-center justify-center min-h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-lg max-w-md w-full text-center">
+      <h1 class="text-6xl font-bold text-center my-10">
+        Fruit
+        <span
+          class="bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text text-transparent"
+        >
+          Classifier
+        </span>
+      </h1>
+      <h2 class="text-3xl font-bold text-gray-800 mb-6">
+        Prediction: {{ prediction }}
+      </h2>
+      <img
+        src="{{ url_for('static', filename=image_url) }}"
+        alt="{{ image_url }}"
+        class="mx-auto w-64 h-64 object-cover rounded-md shadow-md"
+      />
+      <br />
+
+      <form action="/" method="get">
+        <input
+          type="submit"
+          value="Back"
+          class="p-3 w-full text-lg text-white bg-blue-500 rounded-lg shadow-md hover:bg-blue-700 transition duration-300"
+        />
+      </form>
+      <!-- src="{{ url_for('static', filename='uploads/' + image_url.split('/')[-1]) }}" -->
+    </div>
+  </body>
+</html>
